@@ -1,0 +1,16 @@
+package com.offcn;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.offcn.service.UserService;
+
+public class APP {
+
+	public static void main(String[] args) {
+		
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("rest.xml");
+		UserService service = context.getBean("userService",UserService.class);
+		User u1 = service.get("aaa");
+		System.out.println(u1+"=============");
+	}
+}
